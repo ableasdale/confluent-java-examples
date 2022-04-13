@@ -1,6 +1,6 @@
-package io.confluent.cse.producer;
+package io.confluent.cse.kafkaclient.producer;
 
-import io.confluent.cse.Config;
+import io.confluent.cse.kafkaclient.Config;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -27,7 +27,6 @@ public class TLSProducer {
         props.put("ssl.truststore.password", "confluent");
         props.put("ssl.keystore.location", "src/main/resources/kafka.client.keystore.jks");
         props.put("ssl.keystore.password", "confluent");
-
 
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
