@@ -2,7 +2,7 @@ package io.confluent.cse.kafkaclient;
 
 public class Config {
 
-    public static final String KAFKA_HOST = "<hostname>.com";
+    public static final String KAFKA_HOST = "<hostname>";
     public static final int TLS_PORT = 9093;
     public static final int TLS_SASL_PORT = 9094;
 
