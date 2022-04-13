@@ -4,3 +4,4 @@ build
 src/main/resources/admin.user.keytab
 src/main/resources/kafka.client.keystore.jks
 src/main/resources/kafka.client.truststore.jks
+src/main/resources/krb5.conf
