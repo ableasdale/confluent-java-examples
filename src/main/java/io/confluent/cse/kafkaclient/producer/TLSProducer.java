@@ -31,7 +31,7 @@ public class TLSProducer {
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
-        final String topic = Config.TOPIC;
+        final String topic = Config.TOPIC[0];
 
         String[] users = {"eabara", "jsmith", "sgarcia", "jbernard", "htanaka", "awalther"};
         String[] items = {"book", "alarm clock", "t-shirts", "gift card", "batteries"};
