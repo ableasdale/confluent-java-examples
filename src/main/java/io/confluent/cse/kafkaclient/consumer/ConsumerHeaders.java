@@ -41,14 +41,18 @@ public class ConsumerHeaders {
                 ConsumerRecords<?, ?> records = consumer.poll(Duration.ofSeconds(5));
                 for (ConsumerRecord<?, ?> record : records) {
                     LOG.info("*** HEADERS ***");
+                    LOG.info(record.headers().toString());
                     for (Header s : record.headers()) {
                         LOG.info(s.key() + " : " + s.value());
                     }
+                    LOG.info("*** END HEADERS ***");
                     LOG.info("Broker (Unix) Timestamp in ms: %d".formatted(record.timestamp()));
                     Date currentTime = new Date(record.timestamp());
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.ENGLISH);
-                    LOG.info(formatter.format(currentTime));
+                    LOG.info("Formatted DateTime: "+formatter.format(currentTime));
                     LOG.info("Leader Epoch: "+record.leaderEpoch());
+                    LOG.info("Key Size in Bytes: "+record.serializedKeySize());
+                    LOG.info("Record Size in Bytes: "+record.serializedValueSize());
                     LOG.info(String.format("Partition: %s Offset: %s Value: %s Thread Id: %s", record.partition(), record.offset(), record.value(), Thread.currentThread().getId()));
 
                     LOG.info("*** OFFSET INFO ***");
